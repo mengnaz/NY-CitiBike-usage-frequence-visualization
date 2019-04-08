@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=REPLACE_YOUR_KEY"></script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- Single button -->
+<div style="z-index:10000;position:absolute;top:10px;left:10px;" class="btn-group">
+    <button type="button" class="btn btn-primary" style="width:60px;height:60px;border-radius: 50%" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="glyphicon glyphicon-equalizer"></span>
+    </button>
+    <ul class="dropdown-menu" style="margin-top: 3px;background-color:#f4f4f4">
+        <li><a><label class="btn btn-default">
+            <b>Upload</b>&nbsp;<span class="	glyphicon glyphicon-cloud-upload"></span>
+            <input type="file" name="file" id="file" style="display: none;">
+        </label></a></li>
+        <li role="separator" class="divider"></li>
+        <li><a onclick="selectHigh()" data-toggle="tooltip" data-placement="right" title="high usage frequency - greater than 1375"><span class="glyphicon glyphicon-map-marker" style="color:red;"></span>&nbsp;High usage</a></li>
+        <li><a onclick="selectMed()"><span class="glyphicon glyphicon-map-marker" style="color:darkgreen;"></span>&nbsp;Med usage</a></li>
+        <li><a onclick="selectLow()" data-toggle="tooltip" data-placement="right" title="low usage frequency - less than 260"><span class="glyphicon glyphicon-map-marker" style="color:darkblue;"></span>&nbsp;Low usage</a></li>
+        <li><a onclick="selectAll()"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Reset</a></li>
+    </ul>
+</div>
+
+<div id="map">loading google map... please wait</div>
+<script src="js/controller.js"></script>>
+
+</body>
+</html>
